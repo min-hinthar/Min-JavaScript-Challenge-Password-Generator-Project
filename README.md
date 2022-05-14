@@ -1,4 +1,8 @@
 # Min-JavaScript-Challenge-Password-Generator-Project
+
+![Getting Started](./assets/Min-Password-Generator_Screenshot%202022-05-14%20060053.jpg)
+
+
 As for Module 3 Challenge, I have been tasked to use the starter code and create a random password generator application. The following User Story and Acceptance Criteria has been applied in the development of this project:
 
 User Story
