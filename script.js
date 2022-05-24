@@ -39,8 +39,8 @@ function getPrompts() {
    if(confirm("Would you like to include Special Characters in your password?")) {
     choiceArr = choiceArr.concat(specialChar);
     // if all conditions met successively, return true to proceed to truePrompt variable
-    return true;
-}
+   return true;
+  }
 }
 
 // Get references to the #generate element
