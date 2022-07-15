@@ -41,8 +41,7 @@ function getPrompts() {
   //  check if user does not select any options to prevent password to be generated undefined
   if (upperCase === false && upperCase === false && numberArr === false && specialChar === false) {
     // throw alert error message and stop function
-    alert("You must pick at least one option! Please try again");
-    return;
+    return ("You must pick at least one option! Please try again");
   }
 };
 
