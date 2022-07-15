@@ -13,18 +13,21 @@ function getPrompts() {
 
   charLength = (prompt("Please pick a character length between 8 < 128 characters!"));
   // parseInt added to convert to integer or NaN 
-   if(isNaN(charLength) || charLength < 8 || charLength > 128) {
+   if(charLength < 8 || charLength > 128) {
     //  Verify length conditions are acceptable
-     alert("You must choose a number between 8 < 128! Please pick again!");
-    //  Stop function
-     return false;
+     return("You must choose a number between 8 < 128! Please pick again!");
+    //  Verify if user input is Not a Number
+   }  else if (isNaN(charLength)) {
+    charLength = prompt("Your choice is not a Number!");
    }
   //  proceed to add Uppercase choice array
-  if(confirm("Would you like to include Uppercase Letters in your password?")) {
+  includeUpperCase = confirm("Would you like to include Uppercase Letters in your password?");
+  if (includeUpperCase){
     choiceArr = choiceArr.concat(upperCase);
    }
   //  proceed to add Lowercase choice array
-   if(confirm("Would you like to include Lowercase Letters in your password?")) {
+  includeLowerCase = confirm("Would you like to include Lowercase Letters in your password?");
+  if (includeLowerCase){
     choiceArr = choiceArr.concat(lowerCase);
    }
    //  proceed to add Number choice array
@@ -39,11 +42,8 @@ function getPrompts() {
   if (upperCase === false && upperCase === false && numberArr === false && specialChar === false) {
     // throw alert error message and stop function
     alert("You must pick at least one option! Please try again");
-    return false;
+    return;
   }
-  
-  // if all conditions met successively, return true to proceed to truePrompt variable
-      return true;
 };
 
 
@@ -58,7 +58,7 @@ function writePassword() {
 // Verify acceptable prompt criteria return true
   var truePrompts = getPrompts();
   // if getPrompts is true, proceed to generatePassword function
-    if (truePrompts === true) {
+    if (truePrompts) {
       var uniquePassword = generatePassword();
       var passwordText = document.querySelector("#password");
       passwordText.value = uniquePassword;
