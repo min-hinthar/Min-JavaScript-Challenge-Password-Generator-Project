@@ -1,10 +1,10 @@
 // Assignment code here
 
-// Assign values in arrays for password
-let upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G','H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P','Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-let lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g','h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p','q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-let numberArr = ['1', '2', '3', '4', '5', '6', '7','8', '9', '0'];
-let specialChar = ['!', '@', '#', '$', '%', '^', '&','*', '(', ')', '-', '+', ':', '<', '>', '?'];
+// Assign const variables in arrays for password char set
+const upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G','H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P','Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+const lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g','h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p','q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+const numberArr = ['1', '2', '3', '4', '5', '6', '7','8', '9', '0'];
+const specialChar = ['!', '@', '#', '$', '%', '^', '&','*', '(', ')', '-', '+', ':', '<', '>', '?'];
 
 // 1. Prompt the user with a series of password criteria:
 function getPrompts() {
@@ -35,18 +35,20 @@ function getPrompts() {
    if(confirm("Would you like to include Special Characters in your password?")) {
     choiceArr = choiceArr.concat(specialChar);
   }
-  //  
-  if (choiceArr) {
+  //  check if user does not select any options to prevent password to be generated undefined
+  if (upperCase === false && upperCase === false && numberArr === false && specialChar === false) {
+    // throw alert error message and stop function
+    alert("You must pick at least one option! Please try again");
     return false;
-    alert("You must pick at least one option! Please try again")
   }
+  
   // if all conditions met successively, return true to proceed to truePrompt variable
       return true;
 };
 
 
 // Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
+const generateBtn = document.querySelector("#generate");
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
@@ -60,9 +62,6 @@ function writePassword() {
       var uniquePassword = generatePassword();
       var passwordText = document.querySelector("#password");
       passwordText.value = uniquePassword;
-    }
-    else {
-      passwordText.value = "";
     }
 }
 
