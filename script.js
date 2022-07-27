@@ -67,7 +67,7 @@ function writePassword() {
       var passwordText = document.querySelector("#password");
       passwordText.value = uniquePassword;
     }
-}
+};
 
 // Test Click Functionality 
 function generatePassword() {
@@ -82,7 +82,7 @@ function generatePassword() {
   }
 
   return uniquePassword;
-}
+};
 
 
 
