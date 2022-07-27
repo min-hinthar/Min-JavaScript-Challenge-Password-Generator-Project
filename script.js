@@ -48,6 +48,7 @@ function getPrompts() {
     alert ("You must pick at least one option! Please try again")
     return false;
   }
+  return true;
 };
 
 
