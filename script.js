@@ -1,4 +1,4 @@
- Assignment code here
+//  Assignment code here
 
 // Assign const variables in arrays for password char set
 var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G','H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P','Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
