@@ -1,6 +1,6 @@
 # Min-JavaScript-Challenge-Password-Generator-Project
 
-![Getting Started](./assets/Min-Password-Generator_Screenshot%202022-05-14%20060053.jpg)
+![Getting Started](./assets/Screenshot_final.jpg)
 
 Live GitHub Url: https://min-hinthar.github.io/Min-JavaScript-Challenge-Password-Generator-Project/
 

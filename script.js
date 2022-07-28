@@ -1,4 +1,4 @@
-// Assignment code here
+ Assignment code here
 
 // Assign const variables in arrays for password char set
 var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G','H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P','Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
@@ -51,23 +51,16 @@ function getPrompts() {
   return true;
 };
 
-
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
 // Write password to the #password input
 function writePassword() {
-// Verify acceptable prompt criteria return true
+  // Verify acceptable prompt criteria return true
   var truePrompts = getPrompts() 
   // if getPrompts is true, proceed to generatePassword function
-    if (truePrompts === true) {
-      var uniquePassword = generatePassword();
-      var passwordText = document.querySelector("#password");
-      passwordText.value = uniquePassword;
-    }
+  if (truePrompts === true) {
+    var uniquePassword = generatePassword();
+    var passwordText = document.querySelector("#password");
+    passwordText.value = uniquePassword;
+  }
 };
 
 // Test Click Functionality 
@@ -78,13 +71,17 @@ function generatePassword() {
   // based on the getPrompt user input choiceArr
   for(var i = 0; i < charLength; i++ ) {
     // incrementally add random charArr index up to max charLength
-      var randomIndex = Math.floor(Math.random() * choiceArr.length);
-      uniquePassword = uniquePassword + choiceArr[randomIndex];
+    var randomIndex = Math.floor(Math.random() * choiceArr.length);
+    uniquePassword = uniquePassword + choiceArr[randomIndex];
   }
-
   return uniquePassword;
 };
 
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
 
 
